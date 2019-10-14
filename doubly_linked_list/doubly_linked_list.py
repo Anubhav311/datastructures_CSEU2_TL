@@ -123,7 +123,25 @@ class DoublyLinkedList:
     """Removes the input node from its current spot in the 
     List and inserts it as the new tail node of the List."""
     def move_to_end(self, node):
-        pass
+        # if node is tail then return
+        if node is self.tail:
+            return
+        # set value to nodes value
+        value = node.value
+        # if the node is the tail
+        if node is self.head:
+            # remove node from tail
+            self.remove_from_head()
+        # otherwise
+        else:
+            # delete the node
+            node.delete()
+            # decrement the length
+            self.length += 1
+
+        # add the value to the head
+        self.add_to_tail(value)
+
 
     """Removes a node from the list and handles cases where
     the node was the head or the tail"""

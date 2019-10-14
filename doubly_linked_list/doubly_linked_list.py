@@ -131,7 +131,7 @@ class DoublyLinkedList:
             # delete the node
             node.delete()
             # decrement the length
-            self.length += 1
+            self.length -= 1
 
         # add the value to the head
         self.add_to_head(value)
@@ -153,7 +153,7 @@ class DoublyLinkedList:
             # delete the node
             node.delete()
             # decrement the length
-            self.length += 1
+            self.length -= 1
 
         # add the value to the head
         self.add_to_tail(value)

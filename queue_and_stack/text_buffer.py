@@ -35,3 +35,9 @@ class TextBuffer:
         # loop over each character in string and add it to head
         for char in string_to_add[::-1]:
             self.contents.add_to_head(char)
+
+    def delete_front(self, chars_to_remove):
+        # loop over all chars to remove
+        for _ in range(chars_to_remove):
+            # remove from tail
+            self.contents.remove_from_head()

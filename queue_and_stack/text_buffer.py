@@ -43,7 +43,7 @@ class TextBuffer:
             self.contents.remove_from_head()
 
     def delete_back():
-        pass
+        
 
     def join(self, other_buffer):
         # set selfs tail next to be the head of other buffer
@@ -52,3 +52,7 @@ class TextBuffer:
         other_buffer.contents.head.prev = self.contents.tail
         other_buffer.contents.head = self.contents.head
         self.contents.tail = other_buffer.contents.tail
+
+    def join_string(self, string_to_join):
+        new_buffer = TextBuffer(string_to_join)
+        self.join(new_buffer)

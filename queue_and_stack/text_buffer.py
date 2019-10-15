@@ -41,3 +41,14 @@ class TextBuffer:
         for _ in range(chars_to_remove):
             # remove from tail
             self.contents.remove_from_head()
+
+    def delete_back():
+        pass
+
+    def join(self, other_buffer):
+        # set selfs tail next to be the head of other buffer
+        self.contents.tail.next = other_buffer.contents.head
+        # set other buffers prev node to be the tail of this buffer
+        other_buffer.contents.head.prev = self.contents.tail
+        other_buffer.contents.head = self.contents.head
+        self.contents.tail = other_buffer.contents.tail

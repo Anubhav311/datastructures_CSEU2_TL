@@ -26,6 +26,8 @@ class TextBuffer:
         return s
 
     def append(self, string_to_add):
-        pass
+        # loop over each character in the string and add it to tail
+        for char in string_to_add:
+            self.contents.add_to_tail(char)
 
-    def prepend()
+    def prepend(self, string_to_add):

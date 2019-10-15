@@ -31,3 +31,7 @@ class TextBuffer:
             self.contents.add_to_tail(char)
 
     def prepend(self, string_to_add):
+        # reverse incoming string to maintain order
+        # loop over each character in string and add it to head
+        for char in string_to_add[::-1]:
+            self.contents.add_to_head(char)

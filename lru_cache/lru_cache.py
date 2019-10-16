@@ -56,7 +56,7 @@ class LRUCache:
             # return to caller
             return
         # if the size is reaching the limit
-        if self.size == self.limit
+        if self.size == self.limit:
             # delete the item at the head of the storage order
             del self.storage[self.order.head.value[0]]
             # remove node from head of the order
@@ -66,6 +66,6 @@ class LRUCache:
         # add the key value pair to the orders tail
         self.order.add_to_tail((key, value))
         # set the storage at key to the orders tail
-        self.storage(key) = self.order.tail
+        self.storage[key] = self.order.tail
         # increment size
         self.size += 1

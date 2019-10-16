@@ -53,6 +53,8 @@ class LRUCache:
             node.value = (key, value)
             # move the node to the end and return to caller
             self.order.move_to_end(node)
+            # return to caller
+            return
         # if the size is reaching the limit
         if self.size == self.limit
             # delete the item at the head of the storage order

@@ -28,7 +28,7 @@ class LRUCache:
             # move the node to end of order
             self.order.move_to_end(node)
             # return the node value
-            return node.value
+            return node.value[1]
         # otherwise
         else:
             # return None

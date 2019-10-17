@@ -108,7 +108,26 @@ class BinarySearchTree:
         # right case
         if self.right:
             self.right.for_each(cb)
-        pass
+
+    def itter_def_for_each(self, cb):
+        # create a new stack to hold our traversal data
+        stack = []
+        # pushing the root node onto the stack
+        stack.append(self)
+        # while there are still nodes on the stack
+        while len(stack):
+            # pop the current node off the stack
+            current_node = stack.pop()
+            # if current node has a child
+            if current_node.right:
+                # push the current nodes right node onto the stack
+                stack.append(current_node.right)
+            # if the current node has a left child
+            if current_node.left:
+                # push the current nodes left node onto the stack
+                stack.append(current_node.left)
+            # call the call back on the current nodes value
+            cb(current_node.value)
 
     # DAY 4 Project -----------------------
 

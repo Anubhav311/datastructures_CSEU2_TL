@@ -100,10 +100,14 @@ class BinarySearchTree:
     # You may use a recursive or iterative approach
     def for_each(self, cb):
         # base case
+        cb(self.value)
 
         # left case
-
+        if self.left:
+            self.left.for_each(cb)
         # right case
+        if self.right:
+            self.right.for_each(cb)
         pass
 
     # DAY 4 Project -----------------------
